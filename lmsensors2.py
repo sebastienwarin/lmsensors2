@@ -74,9 +74,9 @@ def parse_lmsensors2(string_table: list[list[str]]) -> list[Chip]:
                     for st in SensorType:
                         if key.startswith(st.value):
                             s.sensor_type = st
-                elif key.endswith("max"):
+                elif key.endswith("_max"):
                     s.warn_value = str_to_float(v)
-                elif key.endswith("crit"):
+                elif key.endswith("_crit"):
                     s.crit_value = str_to_float(v)
 
             if s.sensor_type:
