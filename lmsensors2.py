@@ -122,7 +122,7 @@ def check_lmsensors2_common(
                 state = State.WARN
 
             yield Result(state=state, summary=f"value is {val}")
-            yield Metric(metric_name, val, boundaries=(lower, upper))
+            yield Metric(metric_name, val, levels=(lower, upper))
             return
 
 
